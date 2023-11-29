@@ -1,0 +1,16 @@
+__pycache__
+.pytest_cache
+
+.venv
+.vscode
+.env
+
+TODO.md
+
+tests
+tests/*
+
+private_key.json
+privatekey.json
+privateKey.json
+key.json
