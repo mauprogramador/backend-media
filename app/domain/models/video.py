@@ -1,8 +1,9 @@
 from pydantic import BaseModel
-from app.schemas.common import DATETIME
+from datetime import datetime
 
 
 class VideoModelOut(BaseModel):
+    uuid: str
     url: str
-    uuid: str | None
-    create_at: DATETIME | None
+    blob: str
+    upload_at: datetime
