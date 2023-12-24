@@ -4,9 +4,9 @@ from .custom_exceptions import (
     Forbidden,
     NotFound,
     Conflict,
-    RequiredQueryParam,
+    UnsupportedMediaType,
     InvalidUuid,
-    RequiredRequestBody,
+    RequiredRequestFile,
     InternalError,
     FailedDependency
 )

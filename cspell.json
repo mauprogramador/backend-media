@@ -4,7 +4,9 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "bson",
     "dotenv",
+    "imdecode",
     "pydantic",
     "starlette"
   ],

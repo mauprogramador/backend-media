@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
 from os import getenv
-import sys
 
 
 load_dotenv()
@@ -9,14 +8,12 @@ load_dotenv()
 
 PREFIX = "/backend-media/api"
 APP_TITLE = "Backend-Media"
-APP_PORT = int(getenv("APP_PORT", 8002))
 APP_VERSION = "v1.0.0"
 APP_SUMMARY = "A service to manage users' media content"
 APP_DESCRIPTION = """
 <!-- cSpell:disable -->
 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul - Três Lagoas <br/>
-Tecnologia em Análise e Desenvolvimento de Sistemas - TADS4 <br/>
-Eletiva: Rede Social
+Tecnologia em Análise e Desenvolvimento de Sistemas - TADS <br/>
 
 **SnapCut** - Social media for sharing videos
 """
@@ -31,10 +28,7 @@ DATABASE = getenv("DATABASE")
 COLLECTION = getenv("COLLECTION")
 
 FIREBASE_BUCKET = getenv("FIREBASE_BUCKET")
-
-BROWSER = getenv("BROWSER", "google-chrome")
-HOST = "0.0.0.0" if "--host" in sys.argv else "127.0.0.1"
-SWAGGER = f"http://{HOST}:{APP_PORT}/docs"
+FIREBASE_KEY = getenv("FIREBASE_KEY", "private_key.json")
 
 SECRET_KEY = getenv("SECRET_KEY")
 ALGORITHM = getenv("ALGORITHM", "HS256")

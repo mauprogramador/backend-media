@@ -1,0 +1,2 @@
+from .photo_firebase_repository import PhotoFirebaseRepository
+from .video_firebase_repository import VideoFirebaseRepository

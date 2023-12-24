@@ -1,0 +1,2 @@
+from .photo_mongo_repository import PhotoMongoRepository
+from .video_mongo_repository import VideoMongoRepository
