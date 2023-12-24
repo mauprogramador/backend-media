@@ -1,21 +1,19 @@
-from app.data.protocols import (
+from app.data.protocols.auth import (
     CheckUserPasswordRepository,
     DecodeTokenRepository
 )
-from app.main.config import JWT
-from passlib.context import CryptContext
-from datetime import datetime, timedelta
 from jose import jwt, JWTError, ExpiredSignatureError
-from app.main.exceptions import InternalError, Unauthorized
+from app.main.exceptions import Unauthorized
 from app.domain.models import TokenModelOut
+from passlib.context import CryptContext
+from app.main.config import JWT
 
 
 class JwtRepository(
     CheckUserPasswordRepository,
     DecodeTokenRepository
 ):
-    def __init__(self, expire: int = None) -> None:
-        self.__expire = JWT.expire if not expire else expire
+    def __init__(self) -> None:
         self.__crypt_context = CryptContext(schemes=[JWT.scheme], deprecated="auto")
 
     def verify_password(self, plain_password: str, hashed_password: str) -> bool:
