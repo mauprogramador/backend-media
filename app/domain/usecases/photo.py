@@ -1,19 +1,21 @@
 from abc import ABCMeta, abstractmethod
+from pydantic import BaseModel
+
+
+class UploadPhotoInput(BaseModel):
+    uuid: str
+    file: bytes
 
 
 class UploadPhoto(metaclass=ABCMeta):
+    Input = UploadPhotoInput
+
     @abstractmethod
-    async def upload(self, data: bytes) -> str:
+    async def upload_photo(self, data: Input) -> None:
         pass
 
 
-class ReplacePhoto(metaclass=ABCMeta):
+class RemovePhoto(metaclass=ABCMeta):
     @abstractmethod
-    async def replace(self, url: str, data: bytes) -> str:
-        pass
-
-
-class DeletePhoto(metaclass=ABCMeta):
-    @abstractmethod
-    async def delete(self, url: str) -> None:
+    async def remove_photo(self, uuid: str) -> None:
         pass
