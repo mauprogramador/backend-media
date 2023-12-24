@@ -37,14 +37,14 @@ class InvalidUuid(HttpException):
         super().__init__(422, f"Invalid {prefix} UUID")
 
 
-class RequiredQueryParam(HttpException):
+class UnsupportedMediaType(HttpException):
     def __init__(self, prefix: str) -> None:
-        super().__init__(422, f"{prefix} query param is required")
+        super().__init__(415, f"Invalid {prefix} header")
 
 
-class RequiredRequestBody(HttpException):
+class RequiredRequestFile(HttpException):
     def __init__(self) -> None:
-        super().__init__(422, "Request body is required")
+        super().__init__(422, "Request file is required")
 
 
 class InternalError(HttpException):
