@@ -1,10 +1,10 @@
 from app.main.factories.photo import make_db_upload_photo, make_db_remove_photo
 from app.schemas.common import MessageResponse, IMAGE_UPLOAD_DESCRIPTION
 from app.main.dependencies import ImageFile
+from app.main.dependencies import JwtBearer
 from app.schemas.media import MediaInput
 from fastapi import Depends, UploadFile
 from fastapi.routing import APIRouter
-from app.infra.auth import JwtBearer
 from app.main.config import PREFIX
 from typing import Annotated
 

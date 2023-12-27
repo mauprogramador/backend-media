@@ -1,5 +1,5 @@
 from app.main.exceptions import Unauthorized, InvalidUuid
-from .jwt_auth_repository import JwtRepository
+from ...infra.auth.jwt_auth_repository import JwtRepository
 from fastapi import Header, Request
 from bson import ObjectId
 

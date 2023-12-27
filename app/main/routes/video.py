@@ -2,10 +2,10 @@ from app.main.factories.video import make_db_upload_video, make_db_remove_video
 from app.schemas.common import MessageResponse, VIDEO_UPLOAD_DESCRIPTION
 from app.schemas.media import MediaInput, RemoveVideoInput
 from app.main.dependencies import VideoFile
+from app.main.dependencies import JwtBearer
 from app.schemas.common import PATH_UUID
 from fastapi import Depends, UploadFile
 from fastapi.routing import APIRouter
-from app.infra.auth import JwtBearer
 from app.main.config import PREFIX
 from typing import Annotated
 
